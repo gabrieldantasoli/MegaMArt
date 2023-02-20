@@ -1,0 +1,59 @@
+.mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 1.5rem;
+}
+
+.mainHeader .deskblet .logo {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.mainHeader .deskblet .logo h1 {
+    font-size: 1.5rem;
+}
+
+.mainHeader .deskblet .logo h1 span {
+    color: var(--red);
+}
+
+.mainHeader .deskblet .logo img {
+    width: 30px;
+    aspect-ratio: 1 \ 1;
+}
+
+.mainHeader ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.mainHeader ul li {
+    color: var(--second);
+}
+
+.mainHeader ul li:hover, .mainHeader ul li.active {
+    color: var(--red);
+    font-weight: bold;
+    border-bottom: 2px solid var(--red);
+}
+
+.mainHeader .cart {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.mainHeader .cart p {
+    position: absolute;
+    top: -0.7rem;
+    left: 100%;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    background-color: var(--red);
+    padding: 0.1rem 0.35rem;
+    color: var(--forth);
+}
