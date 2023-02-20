@@ -1,0 +1,129 @@
+section.auth{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    height: 100%;
+}
+
+section.auth > div {
+    width: 50%;
+    max-width: 300px;
+}
+
+section.auth > div:nth-child(2) {
+    border-radius: 1rem;
+    box-shadow: 0 0 4px var(--white),
+                0 0 3px var(--black);
+    border: 2px solid var(--red);
+    box-shadow: 5px 5px 10px var(--red);
+}
+
+section.auth img { 
+    width: 100%;
+}
+
+section.auth .form h2{
+    margin-top: 0.5rem;
+    color: var(--red);
+    font-size: 1.8rem;
+}
+
+section.auth .form label {
+    color: var(--black);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+section.auth .form > form {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+}
+
+section.auth .form input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.2rem 0.4rem;
+}
+
+section.auth .form input:focus {
+    border: 2px solid var(--red);
+    outline: none;
+}
+
+section.auth .form button {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+section.auth .form a {
+    margin: 0.3rem 0;
+}
+
+section.auth .form p {
+    text-align: center;
+    margin: 0.5rem 0;
+    color: #444;
+}
+
+section.auth .form .forget {
+    text-align: left;
+}
+
+section.auth .form .forget a {
+    color: #444;
+}
+
+section.auth .form .forget a:hover {
+    color: var(--red);
+}
+
+section.auth .form button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.2rem 1rem;
+    color: var(--red);
+    border: 2px solid var(--red);
+    background-color: transparent;
+    border-radius: 0.5rem;
+    transition: ease-in-out 0.4s;
+}
+
+section.auth .form button:hover {
+    background-color: var(--red);
+    color: var(--white);
+}
+
+
+@media screen and (max-width: 700px) {
+    section.auth .img {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    section.auth .img {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    section.auth .img {
+        display: none;
+    }
+
+    section.auth > .form {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    section.auth .form > form, section.auth .form .forget {
+        text-align: center;
+    }
+}

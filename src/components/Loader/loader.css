@@ -1,0 +1,22 @@
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.loader h2 {
+    font-size: 24px;
+    color: var(--red);
+    margin-right: 15px;
+}
+
+.loader img {
+    width: 100px;
+}

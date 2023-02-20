@@ -30,11 +30,13 @@
     list-style: none;
 }
 
-.mainHeader ul li {
+.mainHeader ul li a {
+    text-decoration: none;
     color: var(--second);
 }
 
-.mainHeader ul li:hover, .mainHeader ul li.active {
+
+.mainHeader ul li:hover, .mainHeader ul li .linkActive {
     color: var(--red);
     font-weight: bold;
     border-bottom: 2px solid var(--red);

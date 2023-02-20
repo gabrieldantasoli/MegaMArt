@@ -4,6 +4,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 
 //IMPORTANDO O CSS
 import './header.css';
+import { NavLink } from 'react-router-dom';
 
 export default () => {
 
@@ -19,15 +20,19 @@ export default () => {
 
             <navbar>
                     <ul>
-                        <li>Home</li>
-                        <li>Menu</li>
-                        <li>About Us</li>
-                        <li>Service</li>
                         <li>
-                            <div className="cart">
-                            <AiOutlineShoppingCart /> 
-                            <p id='cartItemsCount'>2</p>
-                            </div>
+                            <NavLink to="/" className={({isActive}) => (isActive ? "linkActive" : "")} >Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/contact" className={({isActive}) => (isActive ? "linkActive" : "")}>Contact Us</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/cart" className={({isActive}) => (isActive ? "linkActive" : "")}>
+                                <div className="cart">
+                                <AiOutlineShoppingCart /> 
+                                <p id='cartItemsCount'>2</p>
+                                </div>
+                            </NavLink>
                         </li>
                     </ul>
                 </navbar>
