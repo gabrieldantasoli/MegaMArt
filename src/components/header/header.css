@@ -59,3 +59,27 @@
     padding: 0.1rem 0.35rem;
     color: var(--forth);
 }
+
+.mainHeader .button button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    padding: 0.1rem 0.3rem;
+    border: 2px solid var(--red);
+    background-color: transparent;
+    color: var(--red);
+    border-radius: 0.5rem;
+    transition: ease-in-out 0.4s;
+}
+
+.mainHeader .button button:hover {
+    background-color: var(--red);
+    color: #fff;
+    box-shadow: 2px 2px 5px var(--red);
+}
+
+.mainHeader .button:hover {
+    border: none;
+}
