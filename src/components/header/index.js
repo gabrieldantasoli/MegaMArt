@@ -106,7 +106,7 @@ export default () => {
                                 <NavLink to="/cart" className={({isActive}) => (isActive ? "linkActive" : "")}>
                                     <div className="cart">
                                     <AiOutlineShoppingCart /> 
-                                    <p id='cartItemsCount'>2</p>
+                                    <p id='cartItemsCount'>0</p>
                                     </div>
                                 </NavLink>
                             </li>

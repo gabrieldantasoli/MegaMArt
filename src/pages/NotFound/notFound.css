@@ -1,0 +1,25 @@
+section.pnf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;
+}
+
+section.pnf img {
+    width: 80%; 
+    max-width: 400px;
+}
+
+section.pnf p {
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--red);
+    margin: 1rem 0;
+}
+
+section.pnf a {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 1.2rem;
+}

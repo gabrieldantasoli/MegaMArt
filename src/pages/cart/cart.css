@@ -1,0 +1,29 @@
+.cartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+}
+
+.tologin {
+    text-decoration: none;
+    color: var(--forth);
+    font-weight: bold;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.tologin img {
+    width: 80%; 
+    max-width: 400px;
+}
+
+.tologin span {
+    color: #fff;
+}
