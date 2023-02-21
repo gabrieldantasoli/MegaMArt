@@ -83,7 +83,10 @@ export default () => {
                     <nav>
                         <ul>
                             <li>
-                                {email === "admin@admin.com" ? "rota" : ""}
+                                {email === "admin@admin.com" ? 
+                                <NavLink to="/admin/products" className={({isActive}) => (isActive ? "linkActive" : "")}> 
+                                    Admin
+                                </NavLink> : ""}
                             </li>
                             <li>
                                 <ShowOnLogout>
