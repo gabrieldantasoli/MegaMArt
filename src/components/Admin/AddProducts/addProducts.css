@@ -1,0 +1,95 @@
+form.formAddProduct {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.label-product {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em 0;
+    cursor: pointer;
+}
+
+.label-product img {
+    box-shadow: 0 0 5px #fff,
+                0 0 10px #fff;
+    background-color: #fff;
+    width: 100%;height: 100%;
+    border-radius: 10%;
+    border: 2px solid var(--red);
+    transition: ease-in-out 0.5s;
+}
+
+.label-product img:hover {
+    box-shadow: 0 0 5px var(--red),
+                0 0 10px var(--red),
+                0 0 15px var(--red);
+}
+
+.label-product input {
+    display: none;
+}
+
+.label-product svg,
+.label-product p {
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    opacity: 1;
+    color: var(--red);
+    transition: ease-in-out 0.5s;
+    text-shadow: 0 0 10px #000;
+}
+
+.label-product:hover svg {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.infos h2 {
+    color: var(--red);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.infos .radios {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+}
+
+.infos .radios label {
+    margin: 0 1.5rem 0 0.3rem;
+}
+
+.infos > input {
+    padding: 0.2rem 0.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.infos button {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 2px solid var(--red);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: ease-in-out 0.3s;
+}
+
+.infos button:hover {
+    background-color: var(--red);
+    color: #fff;
+}

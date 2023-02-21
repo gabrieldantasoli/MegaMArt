@@ -4,3 +4,4 @@ export { default as ImgSignUp } from './signUp.svg';
 export { default as ImgReset } from './reset.svg';
 export { default as Loader } from './loader.gif';
 export { default as NotFound } from './NotFound.svg';
+export { default as ImgUpload } from './imageUpload.svg';
