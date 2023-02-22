@@ -1,0 +1,78 @@
+#slider {
+    height: 100%;
+}
+
+#slider #slider-track {
+    width: 100%;
+    height: 100%;
+}
+
+#slider svg, #slider .splide__pagination li button.is-active {
+    filter: invert(1);
+}
+
+#slider .slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#slider .slider.one {
+    background-image: url(../../assets/pizza-desk.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#slider .slider.two {
+    background-image: url(../../assets/burger-desk.jpg);
+    background-position: center left;
+    background-size: cover;
+}
+
+#slider .slider.three {
+    background-image: url(../../assets/food-desk.jpg);
+    background-position: center left;
+    background-size: cover;
+}
+
+#slider .slider.four {
+    background-image: url(../../assets/dessert-desk.jpg);
+    background-position: center left;
+    background-size: cover;
+}
+
+#slider .slider.five {
+    background-image: url(../../assets/iceCream.jpg);
+    background-position: bottom right;
+    background-size: cover;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    #slider .slider.one {
+        background-image: url(../../assets/pizza-mob.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    #slider .slider.two {
+        background-image: url(../../assets/burger-mob.jpg);
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    #slider .slider.three {
+        background-image: url(../../assets/food-mob.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    
+    #slider .slider.four {
+        background-image: url(../../assets/dessert-mob.jpg);
+        background-position: center left;
+        background-size: cover;
+    }
+}
