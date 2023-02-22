@@ -21,6 +21,35 @@
     height: 100%;
 }
 
+#slider .slider .shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(9, 9, 9, 0.616);
+}
+
+#slider .slider h1 {
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 0 15px #fff;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+
+#slider .slider p {
+    margin-top: 1.5rem;
+    color: var(--primary);
+    max-width: 800px;
+    text-align: center;
+    z-index: 2;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+}
+
 #slider .slider.one {
     background-image: url(../../assets/pizza-desk.jpg);
     background-position: center;
@@ -74,5 +103,9 @@
         background-image: url(../../assets/dessert-mob.jpg);
         background-position: center left;
         background-size: cover;
+    }
+
+    .splide__arrow{
+        top: calc(100% - 30px);
     }
 }

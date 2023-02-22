@@ -1,0 +1,50 @@
+
+.productsContainer {
+    width: 100%;
+}
+
+.productsContainer .productType {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.7rem;
+    width: 100%;
+    background-color: var(--red);
+}
+
+.productsContainer .productType h2 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.productsContainer .productType .buttonsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.productsContainer .productType .buttonsContainer button {
+    background-color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 3px solid #fff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    transition: ease-in-out 0.4s;
+}
+
+.productsContainer .productType .buttonsContainer button.buttonActive,
+.productsContainer .productType .buttonsContainer button:hover {
+    background-color: #fff;
+    color: var(--red);
+    box-shadow: 0 0 5px #fff,
+                0 0 10px #fff;
+}
+
+.imgContainer img {
+    width: 100px;
+}
