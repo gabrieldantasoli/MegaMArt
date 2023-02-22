@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { logDOM } from "@testing-library/react";
 
 const initialState = {
     isLoggedIn: false,

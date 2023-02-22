@@ -7,12 +7,14 @@ import { NavLink, useNavigate } from 'react-router-dom';
 //IMPORTANDO O CSS
 import './header.css';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../../Services/firebaseConfig';
+import { auth, db } from '../../Services/firebaseConfig';
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from '../../Redux/user/slice';
 import { ShowOnLogin, ShowOnLogout } from '../HiddenLinks';
 import { toast } from 'react-toastify';
 import { BiLogOut } from "react-icons/bi"
 import { selectEmail } from '../../Redux/user/slice';
+import { collection, doc, getDocs } from 'firebase/firestore';
+import { SET_ACTIVE_PRODUCTS } from '../../Redux/products/slice';
 
 
 export default () => {
@@ -45,6 +47,41 @@ export default () => {
             }
           });
     }, [dispatch, displayName]);
+
+    useEffect(() => {
+        async function getData() {
+            let allProducts = [];
+            // Referência para a coleção "users"
+            const productCollectionFoods = collection(db, "foods");
+            const productCollectionDrinks = collection(db, "drinks");
+            const productCollectionDesserts = collection(db, "desserts");
+
+            // Obtém todos os documentos da coleção "foods"
+            await getDocs(productCollectionFoods)
+            .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                    allProducts.push(doc.data());
+                });
+            });
+            // Obtém todos os documentos da coleção "drinks"
+            await getDocs(productCollectionDrinks)
+            .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                    allProducts.push(doc.data());
+                });
+            });
+            // Obtém todos os documentos da coleção "desserts"
+            await getDocs(productCollectionDesserts)
+            .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                    allProducts.push(doc.data());
+                });
+            });
+            dispatch(SET_ACTIVE_PRODUCTS(allProducts));
+        }
+
+        getData();
+    },[])
 
     const navigate = useNavigate();
 

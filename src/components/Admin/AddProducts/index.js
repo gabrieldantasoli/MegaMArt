@@ -8,9 +8,13 @@ import { toast } from 'react-toastify';
 import { ImgUpload } from '../../../assets';
 import { db, storage } from '../../../Services/firebaseConfig';
 import { collection, doc, setDoc, updateDoc } from 'firebase/firestore';
-import { ref, uploadBytes,  } from 'firebase/storage';
+import { getDownloadURL, ref, uploadBytes,  } from 'firebase/storage';
+import { useDispatch } from 'react-redux';
+import { SET_ACTIVE_PRODUCTS } from '../../../Redux/products/slice';
 
 export default () => {
+
+    const dispatch = useDispatch();
 
     const [porgessPorcent ,  setPorgessPorcent] = useState(null);
     const [imgPreview, setImgPreview] = useState(null);
@@ -47,47 +51,48 @@ export default () => {
             return;
         }
 
-        const productCollection = collection(db, "products");
-        const productDoc = doc(productCollection, radioChecked);
-        const typeCollection = collection(productDoc, "items");
-        const documentRef = doc(db, radioChecked, productCode);
-        let data = {
-            name: name,
-            price: price,
-            desription: desc,
-            avaliation: avaliation,
-            productCode: productCode,
-            category: radioChecked,
-            promotion: 0,
-            active: true,
-            img: ""
-        }
+        //Upload Image 
+        // ID do arquivo
+        const fileId = productCode;
 
-        setDoc(documentRef,data)
-        .then(() => {
-            //Upload Image
-            // ID do arquivo
-            const fileId = productCode;
+        // Referência para o arquivo no Firebase Storage
+        const fileRef = ref(storage, `images/${fileId}`);
 
-            // Referência para o arquivo no Firebase Storage
-            const fileRef = ref(storage, `images/${fileId}`);
+        // Arquivo a ser enviado
+        const file = files;
 
-            // Arquivo a ser enviado
-            const file = files;
-
-            // Faz o upload do arquivo para o Storage
-            uploadBytes(fileRef, file).then(() => {
-                toast.success("Product Uploaded!");
-            }).catch((error) => {
-                toast.error("Error")
-            });
-
-
-            
-        })
-        .catch((error) => {
-            toast.error("Error: call not added!")
-        })
+        // Faz o upload do arquivo para o Storage
+        uploadBytes(fileRef, file).then((snapshot) => {
+        getDownloadURL(snapshot.ref).then((downloadURL) => {
+            const productCollection = collection(db, "products");
+            const productDoc = doc(productCollection, radioChecked);
+            const typeCollection = collection(productDoc, "items");
+            const documentRef = doc(db, radioChecked, productCode);
+            let data = {
+                name: name,
+                price: price,
+                desription: desc,
+                avaliation: avaliation,
+                productCode: productCode,
+                category: radioChecked,
+                promotion: 0,
+                active: true,
+                img: downloadURL
+            }
+            dispatch(SET_ACTIVE_PRODUCTS(data));
+            setDoc(documentRef,data)
+            .then(() => {
+            })
+            .catch((error) => {
+                toast.error("Error: call not added!")
+            })
+            toast.success("Product Uploaded!");
+        }).catch((error) => {
+            toast.error("Error Adding Product!");
+        });
+        }).catch((error) => {
+            toast.error("Error Adding Product!");
+        });
     }
 
     
@@ -124,7 +129,7 @@ export default () => {
                     <input type="text" id='productDescription' placeholder='Product Description : ' value={desc} onChange={(e) => setDesc(e.target.value)} required/>  <br/>
                     
                     <label htmlFor='productAvaluation'>Product Avaliation : </label>
-                    <input type="number" id='productAvaluation' value={avaliation} onChange={(e) => setAvaliation(e.target.value)} max={5} min={0} required/>  <br/>
+                    <input type="number" id='productAvaluation' value={avaliation} onChange={(e) => setAvaliation(e.target.value)} max={10} min={0} required/>  <br/>
 
                     <label htmlFor='productCode'>Product Code : </label>
                     <input type="number" id='productCode' value={productCode} onChange={(e) => setProductCode(e.target.value)}  min={0} required/>  <br/>
