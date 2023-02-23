@@ -24,13 +24,16 @@ export default () => {
                 </div>
                 
             </div>
-            {products.map((doc) => {
+            <div id='ProductsContainer'>
+                {products.map((doc) => {
                     if (doc["active"] && (doc["category"] === productType || productType === "all")) {
-                    return(
-                        <ProductItem key={doc["productCode"]} name={doc["name"]} price={doc["price"]} code={doc["productCode"]} promo={doc["promotion"]} avaliation={doc["avaliation"]} category={doc["category"]} description={doc["description"]} img={doc["img"]} />
-                    )
-                }
-            })}
+                        return(
+                            <ProductItem key={doc["productCode"]} name={doc["name"]} price={doc["price"]} code={doc["productCode"]} promo={doc["promotion"]} avaliation={doc["avaliation"]} category={doc["category"]} desription={doc["desription"]} img={doc["img"]} />
+                        )
+                    }
+                })}
+            </div>
+            
         </section>
     )
 }

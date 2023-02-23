@@ -1,0 +1,92 @@
+.productCard {
+    width: 300px;
+    border: 2px solid var(--red);
+    border-radius: 10px;
+}
+
+.productItem {
+    margin: 1rem;
+}
+
+.productItem .productCard .imgContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.productItem .productCard .imgContainer .icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    padding: 0.2rem;
+    border-radius: 0 8px 0 1rem;
+    background-color: var(--red);
+}
+
+.productItem .productCard .imgContainer img {
+    width: 280px;
+    height: 280px;
+}
+
+.productItem .productCard .namePrice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.productItem .productCard .namePrice h3 {
+    color: #121212;
+}
+
+.productItem .productCard .namePrice span.risked {
+    color: var(--red);
+    text-decoration: line-through;
+}
+
+.productItem .productCard .namePrice span.promo {
+    color: green;
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+.productItem .productCard .namePrice p {
+    color: #121212;
+    font-weight: bold;
+}
+
+.productItem .productCard .description p {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.productItem .productCard .avaliationAndAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem 0.5rem 1rem;
+}
+
+.productItem .productCard .avaliationAndAdd p {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.productItem .productCard .avaliationAndAdd button {
+    color: var(--red);
+    background-color: transparent;
+    border: 2px solid var(--red);
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.7rem;
+    transition: ease-in-out 0.3s;
+}
+
+.productItem .productCard .avaliationAndAdd button:hover {
+    background-color: var(--red);
+    color: #fff;
+    box-shadow: 0 0 10px var(--red);
+}

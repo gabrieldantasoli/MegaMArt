@@ -21,18 +21,25 @@ export default (props) => {
         <div className='productItem'>
             <div className='productCard'>
                 <div className='imgContainer'>
-                    <GiWrappedSweet />
-                    <img src={props.img} alt={props.name} />
+                    {props.category === "foods" ? <GiChickenLeg className='icon'/> : props.category === "drinks" ? <BiDrink className='icon'/> : <GiWrappedSweet className='icon'/> }
+                    <img className='itemImg' src={props.img} alt={props.name} />
                 </div>
                 <div className='namePrice'>
                     <h3>{props.name}</h3>
                     <p>{props.promo === 0 ? 
                         "$ " + props.price : 
                         <div className='promo'>
-                            <span>$ {props.price}</span>
-                            <span>$ {(Number(props.price) * (1 - Number(props.promo))).toFixed(2)}</span>
+                            <span className='risked'>$ {props.price}</span>
+                            <span className='promo'>$ {(Number(props.price) * (1 - Number(props.promo))).toFixed(2)}</span>
                         </div>}
                     </p>
+                </div>
+                <div className='description'>
+                    <p>{props.desription.slice(0,50)}{props.desription.length > 50 ? "..." : ""}</p>
+                </div>
+                <div className='avaliationAndAdd'>
+                    <p>Avaliation : {props.avaliation}</p>
+                    <button className='addToCart'>Add To Cart</button>
                 </div>
             </div>
         </div>

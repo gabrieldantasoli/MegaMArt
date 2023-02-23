@@ -2,7 +2,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { ProductsContainer } from '../../components';
+import { Footer, ProductsContainer } from '../../components';
 import { allProducts } from '../../Redux/products/slice';
 
 //IMPORTANDO O CSS
@@ -44,6 +44,8 @@ export default () => {
             </Splide>
 
             <ProductsContainer />
+
+            <Footer />
         </section>
     )
 }

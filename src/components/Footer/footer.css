@@ -1,0 +1,28 @@
+footer.mainFooter {
+    width: 100%;
+    background-color: var(--red);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer.mainFooter p {
+    color: #121212;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+footer.mainFooter p span.react {
+    color: rgb(0, 42, 255);
+}
+
+footer.mainFooter p span.firebase {
+    color: rgb(255, 225, 0);
+}
+
+footer.mainFooter a {
+    color: #fff;
+    font-size: 1.3rem;
+}
