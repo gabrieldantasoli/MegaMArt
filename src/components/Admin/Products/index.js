@@ -34,8 +34,8 @@ export default () => {
                     {products.map((prod) => {
                         if (prod["productCode"].toLowerCase().indexOf(search) !== -1 || prod["name"].toLowerCase().indexOf(search) !== -1 || prod["category"].toLowerCase().indexOf(search) !== -1) {
                             return(
-                            <AdminUpdateProducts name={prod["name"]} img={prod["img"]} code={prod["productCode"]} promo={prod["promotion"]} price={prod["price"]} active={prod["active"]} />
-                        )
+                                <AdminUpdateProducts name={prod["name"]} img={prod["img"]} code={prod["productCode"]} promo={prod["promotion"]} price={prod["price"]} active={prod["active"]} desc={prod["desription"]} avaliation={prod["avaliation"]} category={prod["category"]} />
+                            )
                         }
                         
                     })}

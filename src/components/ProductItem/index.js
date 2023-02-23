@@ -26,7 +26,7 @@ export default (props) => {
                 </div>
                 <div className='namePrice'>
                     <h3>{props.name}</h3>
-                    <p>{props.promo === 0 ? 
+                    <p>{Number(props.promo) === 0 ? 
                         "$ " + props.price : 
                         <div className='promo'>
                             <span className='risked'>$ {props.price}</span>

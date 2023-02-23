@@ -75,3 +75,67 @@
 .adminTable .tdButton button:hover {
     color: #121212;
 }
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.formAddProduct {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.fixed h2 {
+    color: var(--red);
+    font-size: 2rem;
+}
+
+.formAddProduct .radios input {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+}
+
+.formAddProduct .radios label {
+    font-size: 1.2rem;
+}
+
+.formAddProduct .labelInput label {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+
+.formAddProduct .labelInput input {
+    padding: 0.5rem 1rem;
+    width: 200px;
+}
+
+.formAddProduct button.update {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 0.6rem 1rem;
+    background-color: transparent;
+    border-radius: 0.7rem;
+    transition: ease-in-out 0.3s;
+}
+
+.formAddProduct button.update:hover {
+    background-color: var(--red);
+    color: #fff;
+}
+
+.fixed .closePage {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+}
