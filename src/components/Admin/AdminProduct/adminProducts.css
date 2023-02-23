@@ -1,0 +1,77 @@
+.adminTable {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.adminTable th {
+    background-color: var(--red);
+}
+
+.adminTable td:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.adminTable tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.adminTable tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.adminTable tr:hover {
+    background-color: #bbb;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    gap: 1rem;
+} 
+
+.search input {
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    width: 400px;
+}
+
+.search .close {
+    font-size: 3rem;
+}
+
+.adminTable img {
+    height: 100px;
+}
+
+.adminTable td.yellow {
+    background-color: yellow;
+}
+
+.adminTable td.green {
+    background-color: green;
+}
+
+.adminTable td.red {
+    background-color: red;
+}
+
+.adminTable .tdButton button {
+    background-color: var(--red);
+    padding: 0.5rem;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 0.7rem;
+    color: #fff;
+} 
+
+.adminTable .tdButton button:hover {
+    color: #121212;
+}

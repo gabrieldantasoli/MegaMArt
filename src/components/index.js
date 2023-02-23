@@ -8,3 +8,4 @@ export { default as AdminEarnings } from './Admin/Earnings';
 export { default as ProductItem } from './ProductItem';
 export { default as ProductsContainer } from './ProductsContainer';
 export { default as Footer } from './Footer';
+export { default as AdminUpdateProducts } from './Admin/AdminProduct';
