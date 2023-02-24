@@ -1,8 +1,48 @@
 .cartContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: var(--red);
+}
+
+.cartContainer .loggedCart .info {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cartContainer .loggedCart span {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.cartContainer .loggedCart{
+    text-align: center;
+}
+
+.cartContainer .loggedCart .info p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cartContainer .loggedCart .info button {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 0.8rem;
+    transition: ease-in-out 0.3s;
+}
+
+.cartContainer .loggedCart .info button:hover {
+    background-color: #fff;
+    color: var(--red);
+    box-shadow: 0 0 10px #fff;
 }
 
 .tologin {

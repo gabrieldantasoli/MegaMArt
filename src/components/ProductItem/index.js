@@ -5,18 +5,19 @@ import { BiDrink } from 'react-icons/bi';
 
 //IMPORTANDO O CSS
 import './productItem.css';
+import { useDispatch } from 'react-redux';
+import { ADD_PRODUCT } from '../../Redux/cart/slice';
+import { toast } from 'react-toastify';
 
 export default (props) => {
-    /*
-    name 
-    price
-    code
-    promo
-    avaliation
-    category
-    description
-    img
-    */
+    
+    const dispatch = useDispatch();
+
+    function add_product() {
+        dispatch(ADD_PRODUCT({"name": props.name,"img": props.img,"code": props.code,price: props.price}))
+        toast.success(`${props.name} Added on Cart`);
+    }
+
     return (
         <div className='productItem'>
             <div className='productCard'>
@@ -39,7 +40,7 @@ export default (props) => {
                 </div>
                 <div className='avaliationAndAdd'>
                     <p>Avaliation : {props.avaliation}</p>
-                    <button className='addToCart'>Add To Cart</button>
+                    <button onClick={add_product} className='addToCart'>Add To Cart</button>
                 </div>
             </div>
         </div>

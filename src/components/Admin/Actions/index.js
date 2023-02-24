@@ -13,8 +13,6 @@ export default () => {
                 <NavLink to="/admin/products" className={({isActive}) => (isActive ? "adminLinkActive" : "")}>Products</NavLink>
                 <NavLink to="/admin/addproducts" className={({isActive}) => (isActive ? "adminLinkActive" : "")}>Add Products</NavLink>
                 <NavLink to="/admin/earnings" className={({isActive}) => (isActive ? "adminLinkActive" : "")}>Earnings</NavLink>
-                <NavLink to="/admin/deliverys" className={({isActive}) => (isActive ? "adminLinkActive" : "")}>Deliverys</NavLink>
-                <NavLink to="/admin/contacts" className={({isActive}) => (isActive ? "adminLinkActive" : "")}>Contacts</NavLink>
             </nav>
             
         </div>

@@ -15,6 +15,8 @@ import { BiLogOut } from "react-icons/bi"
 import { selectEmail } from '../../Redux/user/slice';
 import { collection, doc, getDocs } from 'firebase/firestore';
 import { SET_ACTIVE_PRODUCTS } from '../../Redux/products/slice';
+import { CLEAR_CART } from '../../Redux/cart/slice';
+import { selectProductsCount } from '../../Redux/cart/cart.selector';
 
 
 export default () => {
@@ -22,6 +24,7 @@ export default () => {
     const [displayName, setDisplayName] = useState("");
 
     const email = useSelector(selectEmail);
+    const cartTotalItems = useSelector(selectProductsCount)
 
     const dispatch = useDispatch();
 
@@ -88,6 +91,7 @@ export default () => {
     function logoutUser() {
         signOut(auth).then(() => {
             toast.success("Logout Successfuly.");
+            dispatch(CLEAR_CART());
             navigate("/");
         }).catch((error) => {
         const errorMessage = error.message;
@@ -146,7 +150,7 @@ export default () => {
                                 <NavLink to="/cart" className={({isActive}) => (isActive ? "linkActive" : "")}>
                                     <div className="cart">
                                     <AiOutlineShoppingCart /> 
-                                    <p id='cartItemsCount'>0</p>
+                                    <p id='cartItemsCount'>{cartTotalItems}</p>
                                     </div>
                                 </NavLink>
                             </li>

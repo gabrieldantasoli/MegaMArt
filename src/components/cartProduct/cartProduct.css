@@ -1,0 +1,18 @@
+.cartProduct {
+    background-color: #fff;
+    width: 100%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cartProduct img {
+    height: 100px;
+}
+
+.cartProduct #actions {
+    display: flex;
+    font-size: 2rem;
+    gap: 1rem;
+}
